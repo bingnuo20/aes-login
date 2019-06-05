@@ -48,7 +48,7 @@ public class AesUtil {
 
     //AES解密--并解密base 64 code
     public static String decrypt(String encryptStr) throws  Exception{
-        encryptStr.replaceAll("#","/");
+        encryptStr=encryptStr.replaceAll("#","/").replaceAll(" ","+");
         return StringUtils.isEmpty(encryptStr) ? null : aesDecryptByBytes(base64Decode(encryptStr));
     }
 
